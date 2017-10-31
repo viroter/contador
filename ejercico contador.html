@@ -1,0 +1,40 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+    <head> 	
+		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1"> 
+		<title>contador</title> 
+		<link rel="stylesheet" type="text/css" href="./css.css" title="style" />
+		<script type="text/javascript">
+		setInterval(function(){
+        var fecha_final = new Date('12/31/2017 11:00 GMT-0800');
+        var fecha = new Date();
+        var resultado = fecha_final - fecha;
+        var resultado_seg = Math.floor(resultado / 1000);
+		var dias = Math.floor(resultado_seg/86400);
+		var seg = resultado_seg % 60;
+        var min = Math.floor(resultado_seg / 60)%60;
+        var hr = Math.floor(resultado_seg / 3600)%24;
+        document.getElementById('contador').innerHTML = dias + ' dias ' + ':' + hr +  ' horas ' + ':' + min +' minutos ' + ':' + seg + ' segundos ' + ' Faltan para el dia 31 del 12 de 2017 '
+		calculalaRGB() }, 1000);
+	 
+		function calculalaRGB(){
+			var colorRGB=0;
+		var maximoRGB=250;
+			var color=Math.round(Math.random()*(maximoRGB-colorRGB)+ colorRGB);
+			var color1=Math.round(Math.random()*(maximoRGB-color)+ color);
+			var color2=Math.round(Math.random()*(maximoRGB-color1)+ color1);
+			var color3=Math.round(Math.random()*(maximoRGB-color2)+ color2);
+			var pinta ='rgb(' + color + ',' + color1 + ',' + color2 + ')'
+			console.log =(pinta)
+			document.body.style.backgroundColor='rgb(' + color + ',' + color1 + ',' + color2 + ')';
+			// document.getElementById("demotext").style.backgroundColor='rgb' + color + ',' + color1 + ',' + color2 + ','
+			
+		}
+		
+	 </script>
+	</head>
+	<body>
+	<div id="contador" />
+	</body>
+</html>
+		
